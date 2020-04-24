@@ -18,13 +18,13 @@ class Mail
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = '';                 // SMTP username
-        $mail->Password = '';                           // SMTP password
+        $mail->Username = 'akotikovs7@gmail.com';                 // SMTP username
+        $mail->Password = 'metansteroids7';                           // SMTP password
         $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
         $mail->Port = 587;                                    // TCP port to connect to
 
-        $mail->setFrom('akotikovs7@gmail.com', 'Arturs');
-        $mail->addAddress($_POST['email'], $_POST['name']);     // Add a recipient
+        $mail->setFrom($_POST['email'], $_POST['name']);
+        $mail->addAddress('akotikovs7@gmail.com','arturs');     // Add a recipient
         $mail->addReplyTo('akotikovs7@gmail.com');
 
         $mail->isHTML(true);                                  // Set email format to HTML
